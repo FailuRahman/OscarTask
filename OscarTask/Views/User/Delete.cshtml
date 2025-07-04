@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model User
+
+<h2>Delete Form</h2>
+
+<label>are you sure to delete "@Model.Name"</label>
+<form asp-action="Delete" method="post">
+    
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit">Delete</button>
+    <a asp-action="Index">Cancel</a>
+
+</form>

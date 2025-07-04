@@ -1,0 +1,43 @@
+﻿@model OscarTask.Models.User
+
+<h2>Create Interview Form</h2>
+
+<form asp-action="Create" method="post" id="createForm">
+    <label>Name:</label>
+    <input asp-for="Name" id="name" />
+    <br />
+
+    <label>Gender:</label>
+    <input asp-for="Gender" id="gender" />
+    <br />
+
+    <label>Phone:</label>
+    <input asp-for="Phone" id="phone" />
+    <br />
+
+    <label>Position:</label>
+    <input asp-for="Position" id="position" />
+    <br />
+
+    <button type="submit">Add</button>
+    <br />
+    <a asp-action="Index">Cancel</a>
+</form>
+
+<script>
+    $(document).ready(function () {
+
+        $('#createForm').submit(function (e) {
+
+             var name = $('#name').val().trim();
+
+            var phone = $('#phone').val().trim();
+
+            if (name === "" || phone === "") {
+                alert("enter name and phone numbr");
+
+                e.preventDefault();
+            }
+        });
+    });
+</script>
