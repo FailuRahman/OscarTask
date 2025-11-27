@@ -12,6 +12,7 @@ namespace OscarTask.Controllers
         public UserController(AppDbContext context)
         {
             _context = context;
+
         }
 
         public IActionResult Index()
@@ -19,6 +20,7 @@ namespace OscarTask.Controllers
             var ExistingUser = _context.Users.ToList();
 
             return View(ExistingUser);
+
         }
 
         public IActionResult Create()
